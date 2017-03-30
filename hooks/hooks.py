@@ -99,7 +99,7 @@ SUPPORTED_TRANSPORTS = ['udp', 'udpu', 'multicast', 'unicast']
 DEPRECATED_TRANSPORT_VALUES = {"multicast": "udp", "unicast": "udpu"}
 
 
-@hooks.hook()
+@hooks.hook('install.real')
 def install():
     # NOTE(dosaboy): we currently disallow upgrades due to bug #1382842. This
     # should be removed once the pacemaker package is fixed.
